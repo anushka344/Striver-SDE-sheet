@@ -1,0 +1,22 @@
+#include <bits/stdc++.h> 
+int calp (int x ,int n,int m)
+{
+  long  long int ans=1;
+    long y=x;
+    while (n>0)
+    {
+        if (n%2==1)
+        {   ans=(ans*(y%m))%m;
+              n--;  
+        }
+        y=(y%m *y%m)%m;
+        n=n/2;
+    }
+    return (int)ans;
+    
+}
+int modularExponentiation(int x, int n, int m) {
+	int ans= calp(x,n,m);
+    
+    return ans;
+}
